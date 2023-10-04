@@ -17,6 +17,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
+          token: ${{ secrets.PAT }}
           node-version: 16
 
       # - name: Authenticate with private NPM package
