@@ -12,6 +12,8 @@ jobs:
   version-and-push:
     name: "Version and Push"
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.PAT }}
     steps:
       - uses: actions/checkout@v3
 
@@ -22,12 +24,19 @@ jobs:
       #     always-auth: true
       #     registry-url: https://npm.pkg.github.com
 
+      # - name: Authenticate with private NPM package
+      #   run: |
+      #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
+      #     echo `cat ~/.npmrc`
+
       - name: Check stuff
         run: |
           npm --version
           node --version
 
       - name: Install top-level dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
         run: npm install
 
       - name: Build All Packages
