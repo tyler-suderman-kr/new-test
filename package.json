@@ -10,6 +10,9 @@
     "publish:all": "func() { lerna publish --force-publish --ignore-scripts \"$1\" --yes; }; func",
     "build": "lerna run --parallel build"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@tyler-suderman-kr"
+  },
   "devDependencies": {
     "lerna": "^5.1.1"
   },
