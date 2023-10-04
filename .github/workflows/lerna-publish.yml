@@ -22,8 +22,10 @@ jobs:
           always-auth: true
           registry-url: https://npm.pkg.github.com
 
-      - name: Check npmrc
-        run: echo `cat .npmrc`
+      - name: Check stuff
+        run: |
+          npm --version
+          node --version
 
       - name: Install top-level dependencies
         run: npm install
