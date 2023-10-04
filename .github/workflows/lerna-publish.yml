@@ -23,7 +23,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
 
       - name: Check npmrc
-        run: echo `cat ~/.npmrc`
+        run: echo `cat .npmrc`
 
       - name: Install top-level dependencies
         run: npm install
