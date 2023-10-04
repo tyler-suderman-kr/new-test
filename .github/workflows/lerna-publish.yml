@@ -21,12 +21,9 @@ jobs:
           node-version: 16
           always-auth: true
           registry-url: https://npm.pkg.github.com
-          scope: "@tyler-suderman-kr"
 
-      # - name: Authenticate with private NPM package
-      #   run: |
-      #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
-      #     echo `cat ~/.npmrc`
+      - name: Check npmrc
+        run: echo `cat ~/.npmrc`
 
       - name: Install top-level dependencies
         run: npm install
