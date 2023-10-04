@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Authenticate with private NPM package
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
-          echo `cat ~/.npmrc`
+      # - name: Authenticate with private NPM package
+      #   run: |
+      #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
+      #     echo `cat ~/.npmrc`
 
       - name: Install top-level dependencies
         run: npm install
