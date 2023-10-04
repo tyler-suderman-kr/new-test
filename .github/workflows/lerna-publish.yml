@@ -12,36 +12,30 @@ jobs:
   version-and-push:
     name: "Version and Push"
     runs-on: ubuntu-latest
-    # env:
-    #   NODE_AUTH_TOKEN: ${{ secrets.PAT }}
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
-        with:
-          token: ${{ secrets.PAT }}
-          node-version: 16
-          always-auth: true
-          registry-url: https://npm.pkg.github.com
-          scope: "@tyler-suderman-kr"
+        # with:
+        #   token: ${{ secrets.PAT }}
+        #   node-version: 16
+        #   always-auth: true
+        #   registry-url: https://npm.pkg.github.com
+        #   scope: "@tyler-suderman-kr"
 
       # - name: Authenticate with private NPM package
       #   run: |
       #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
       #     echo `cat ~/.npmrc`
 
-      - name: Check stuff
-        run: |
-          npm --version
-          node --version
+      # - name: Check stuff
+      #   run: |
+      #     npm --version
+      #     node --version
 
-      - name: Install top-level dependencies
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-        run: npm install
+      - run: npm install
 
-      - name: Build All Packages
-        run: npm run build
+      - run: npm run build
 
       - name: Version root package
         if: ${{ steps.version-label.outputs.level != null }}
@@ -49,8 +43,8 @@ jobs:
 
       - name: Bump NPM version and push
         env:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_PAT }}
-        id: bumpandpush
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        id: bumpAndPush
         if: ${{ steps.version-label.outputs.level != null }}
         run: |
           npm run publish:all ${{ steps.version-label.outputs.level }}
