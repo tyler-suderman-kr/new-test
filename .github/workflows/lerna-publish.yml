@@ -12,8 +12,8 @@ jobs:
   version-and-push:
     name: "Version and Push"
     runs-on: ubuntu-latest
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+    # env:
+    #   NODE_AUTH_TOKEN: ${{ secrets.PAT }}
     steps:
       - uses: actions/checkout@v3
 
@@ -35,8 +35,8 @@ jobs:
           node --version
 
       - name: Install top-level dependencies
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.PAT }}
         run: npm install
 
       - name: Build All Packages
