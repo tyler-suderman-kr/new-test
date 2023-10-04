@@ -1,9 +1,9 @@
 name: "Publish"
 
-permissions:
-  actions: read
-  contents: read
-  id-token: write
+# permissions:
+#   actions: read
+#   contents: read
+#   id-token: write
 
 on:
   workflow_dispatch:
