@@ -11,8 +11,7 @@
     "build": "lerna run --parallel build"
   },
   "devDependencies": {
-    "lerna": "^5.1.1",
-    "npm": "^8.15.1"
+    "lerna": "^5.1.1"
   },
   "repository": {
     "type": "git",
