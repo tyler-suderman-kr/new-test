@@ -16,9 +16,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
-        # with:
+        with:
+          node-version: 16
         #   token: ${{ secrets.PAT }}
-        #   node-version: 16
         #   always-auth: true
         #   registry-url: https://npm.pkg.github.com
         #   scope: "@tyler-suderman-kr"
