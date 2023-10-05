@@ -11,7 +11,7 @@ on:
 jobs:
   version-and-push:
     name: "Version and Push"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, kubernetes, on-prem]
     steps:
       - uses: actions/checkout@v3
 
