@@ -49,8 +49,8 @@ jobs:
       - name: Version root package
         run: npm run version:root patch
 
-      # - name: Bump NPM version and push
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.PAT }}
-      #   id: bumpAndPush
-      #   run: npm run publish:all patch
+      - name: Bump NPM version and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        id: bumpAndPush
+        run: npm run publish:all patch
