@@ -8,8 +8,8 @@
   ],
   "command": {
     "publish": {
-        "message": "Bump version to %s [skip ci]"
+      "message": "Bump version to %s [skip ci]"
     }
   },
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
