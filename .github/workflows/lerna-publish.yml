@@ -41,6 +41,11 @@ jobs:
 
       - run: npm run build
 
+      - name: Configure git
+        run: |
+          git config --global --replace-all user.name "$GITHUB_ACTOR"
+          git config --global --replace-all user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
       - name: Version root package
         run: npm run version:root patch
 
