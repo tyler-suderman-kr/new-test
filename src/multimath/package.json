@@ -1,0 +1,14 @@
+{
+  "name": "multimath",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

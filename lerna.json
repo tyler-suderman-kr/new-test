@@ -3,5 +3,13 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useNx": true,
   "useWorkspaces": true,
-  "version": "1.0.2"
+  "packages": [
+    "src/*"
+  ],
+  "command": {
+    "publish": {
+        "message": "Bump version to %s [skip ci]"
+    }
+  },
+  "version": "1.0.3"
 }

@@ -1,8 +1,7 @@
 {
   "name": "test-workflows",
-  "version": "1.0.2",
-  "description": "## adding things",
-  "main": "index.js",
+  "version": "1.0.3",
+  "description": "wrapper package to build all packages within src",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "version:root": "npm version --no-git-tag-version --",
@@ -13,17 +12,5 @@
   "devDependencies": {
     "lerna": "^5.6.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tyler-suderman-kr/test-workflows.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tyler-suderman-kr/test-workflows/issues"
-  },
-  "homepage": "https://github.com/tyler-suderman-kr/test-workflows#readme",
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces":["src/*"]
 }
