@@ -41,8 +41,8 @@ jobs:
 
       - run: npm run build
 
-      # - name: Version root package
-      #   run: npm run version:root patch
+      - name: Version root package
+        run: npm run version:root patch
 
       # - name: Bump NPM version and push
       #   env:
