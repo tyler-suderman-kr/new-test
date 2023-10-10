@@ -50,7 +50,7 @@ jobs:
         run: npm run version:root patch
 
       - name: Bump NPM version and push
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
+        # env:
+        #   GH_TOKEN: ${{ secrets.PAT }}
         id: bumpAndPush
         run: npm run publish:all patch
