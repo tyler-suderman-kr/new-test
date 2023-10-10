@@ -11,7 +11,7 @@
     "build": "lerna run --parallel build"
   },
   "devDependencies": {
-    "lerna": "^5.1.1"
+    "lerna": "^5.6.2"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/tyler-suderman-kr/test-workflows/issues"
   },
-  "homepage": "https://github.com/tyler-suderman-kr/test-workflows#readme"
+  "homepage": "https://github.com/tyler-suderman-kr/test-workflows#readme",
+  "workspaces": [
+    "packages/*"
+  ]
 }
