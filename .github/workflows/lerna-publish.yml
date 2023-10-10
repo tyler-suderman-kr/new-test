@@ -51,6 +51,6 @@ jobs:
 
       - name: Bump NPM version and push
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GH_TOKEN: ${{ secrets.PAT }}
         id: bumpAndPush
         run: npm run publish:all patch
