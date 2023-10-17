@@ -6,7 +6,7 @@ permissions:
   id-token: write
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   version-and-push:
@@ -47,7 +47,8 @@ jobs:
         run: npm run version:root patch
 
       - name: Bump NPM version and push
-        # env:
-        #   GH_TOKEN: ${{ secrets.PAT }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GH_TOKEN: ${{ secrets.PAT }}
         id: bumpAndPush
         run: npm run publish:all patch
