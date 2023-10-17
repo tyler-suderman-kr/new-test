@@ -14,25 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: secrets.PAT
 
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-
-        #   token: ${{ secrets.PAT }}
-        #   always-auth: true
-        #   registry-url: https://npm.pkg.github.com
-        #   scope: "@tyler-suderman-kr"
-
-      # - name: Authenticate with private NPM package
-      #   run: |
-      #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
-      #     echo `cat ~/.npmrc`
-
-      # - name: Check stuff
-      #   run: |
-      #     npm --version
-      #     node --version
 
       - run: npm install
 
@@ -47,8 +34,5 @@ jobs:
         run: npm run version:root patch
 
       - name: Bump NPM version and push
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.PAT }}
-        #   GH_TOKEN: ${{ secrets.PAT }}
         id: bumpAndPush
         run: npm run publish:all patch
