@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: secrets.PAT
+          username: "tyler-suderman-kr"
+          ssh-string: false
 
       - uses: actions/setup-node@v3
         with:
